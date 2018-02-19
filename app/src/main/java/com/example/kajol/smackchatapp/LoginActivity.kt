@@ -1,5 +1,6 @@
 package com.example.kajol.smackchatapp
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,6 +16,9 @@ class LoginActivity : AppCompatActivity() {
 
     }
     fun loginCreateUserBtnClicked(view : View){
+
+        val createUserIntent = Intent(this,createUserActivity::class.java)
+        startActivity(createUserIntent)
 
     }
 
