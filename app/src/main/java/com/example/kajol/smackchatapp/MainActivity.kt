@@ -1,5 +1,6 @@
 package com.example.kajol.smackchatapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -33,7 +34,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun userLoginClicked(view : View){
-
+        val loginIntent = Intent(this, LoginActivity::class.java)
+        startActivity(loginIntent)
 
     }
 
