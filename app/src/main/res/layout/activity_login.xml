@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kajol.smackchatapp.LoginActivity">
+    tools:context="com.example.kajol.smackchatapp.Controller.LoginActivity">
 
     <EditText
         android:id="@+id/loginEmailText"
@@ -75,5 +75,7 @@
         android:textColor="@android:color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 </android.support.constraint.ConstraintLayout>
