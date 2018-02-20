@@ -20,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
 
         val createUserIntent = Intent(this, createUserActivity::class.java)
         startActivity(createUserIntent)
+        finish()
 
     }
 
