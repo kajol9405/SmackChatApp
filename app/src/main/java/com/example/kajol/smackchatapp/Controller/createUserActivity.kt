@@ -4,7 +4,9 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.example.kajol.smackchatapp.R
+import com.example.kajol.smackchatapp.Services.AuthService
 import kotlinx.android.synthetic.main.activity_create_user.*
 import java.util.*
 
@@ -53,6 +55,13 @@ class createUserActivity : AppCompatActivity() {
     }
 
     fun createUserBtnClicked(view: View){
+        AuthService.registerUser(this,"kp@gmail.com","12345"){complete ->
+            if(complete){
+                Toast.makeText(this,"Successful",Toast.LENGTH_LONG).show()
+            }else{
+                Toast.makeText(this,"Something went wrong!",Toast.LENGTH_LONG).show()
+            }
 
+        }
     }
 }
