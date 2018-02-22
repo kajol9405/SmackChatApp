@@ -70,13 +70,13 @@ class createUserActivity : AppCompatActivity() {
 
         if(userName.isNotEmpty() && userEmail.isNotEmpty() && password.isNotEmpty()){
 
-            AuthService.registerUser(this, userEmail, password) { complete ->
+            AuthService.registerUser( userEmail, password) { complete ->
                 if (complete) {
-                    Toast.makeText(this, "Registration Successful", Toast.LENGTH_LONG).show()
-                    AuthService.loginUser(this, userEmail, password) { loginSuccess ->
+                    Toast.makeText( this,"Registration Successful", Toast.LENGTH_LONG).show()
+                    AuthService.loginUser(userEmail, password) { loginSuccess ->
                         if (loginSuccess) {
                             Toast.makeText(this, "Login Successful", Toast.LENGTH_LONG).show()
-                            AuthService.createUser(this, userName, userEmail, userAvatar, avatarColor) { createSuccess ->
+                            AuthService.createUser( userName, userEmail, userAvatar, avatarColor) { createSuccess ->
                                 if (createSuccess) {
 
                                     val userDataChange = Intent(BROADCAST_USER_DATA_CHANGE)
@@ -122,6 +122,4 @@ class createUserActivity : AppCompatActivity() {
         generateColorBtn.isEnabled = !enable
 
     }
-
-
 }

@@ -33,13 +33,14 @@ class LoginActivity : AppCompatActivity() {
         val password = loginPasswordText.text.toString()
         hideKeyBoard()
         if(email.isNotEmpty() && password.isNotEmpty()){
-            AuthService.loginUser(this,email,password){loginSuccess ->
+            AuthService.loginUser(email,password){loginSuccess ->
                 if(loginSuccess){
                     Toast.makeText(this,"Login success",Toast.LENGTH_LONG).show()
                     AuthService.findUserByEmail(this){findSuccess ->
                         if(findSuccess){
                             enableSpinner(false)
                             finish()
+
                         }else{
                             errorToast()
                         }

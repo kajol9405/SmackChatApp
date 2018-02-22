@@ -2,6 +2,7 @@ package com.example.kajol.smackchatapp.Services
 
 import android.content.Context
 import android.graphics.Color
+import com.example.kajol.smackchatapp.Controller.App
 import java.util.*
 
 /**
@@ -22,10 +23,11 @@ object UserDataService {
          avatarName =""
          email=""
          name=""
-         AuthService.authToken =""
-         AuthService.userEmail =""
-         AuthService.isLoggedIn =false
-
+         App.sharedPreferences.authToken =""
+         App.sharedPreferences.userEmail =""
+         App.sharedPreferences.isLoggedIn =false
+         MessageService.clearMessages()
+         MessageService.clearChannels()
 
     }
     fun returnAvatarColor(components: String ): Int{
